@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinema Ticket</title>
+  <style>
+    body { font-family: sans-serif; background: #eee; display: flex; justify-content: center; padding: 50px; }
+    .ticket {
+      background: white;
+      border: 2px dashed #333;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+    .qr img {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket">
+    <h2>🎬 LUMIÈRE CINEMA</h2>
+    <p>🎞️ Movie: Dream Journey</p>
+    <p>📍 Theater: Room 2 | Seat: F12</p>
+    <p>📅 Date: August 2, 2025 | 🕒 Time: 7:30 PM</p>
+    <p>🎟️ Ticket ID: 0425-2025</p>
+    <div class="qr">
+      <!-- QR linking to validation.html with ticket ID -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://AureleHK.github.io/cinema-ticket-validation/ticket.html/validation.html?id=0425-2025" alt="QR Code">
+    </div>
+  </div>
+</body>
+</html>
