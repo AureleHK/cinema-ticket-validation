@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .valid {
+      color: green;
+      font-size: 24px;
+    }
+    .invalid {
+      color: red;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div id="result">Validating your ticket...</div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ticketId = params.get('id');
+
+    // List of valid ticket IDs
+    const validTickets = ["0425-2025", "1234-5678", "ABCD-9999"];
+
+    const result = document.getElementById("result");
+    if (validTickets.includes(ticketId)) {
+      result.innerHTML = `<div class="valid">✅ Entry Approved!<br>Ticket ID: ${ticketId}</div>`;
+    } else {
+      result.innerHTML = `<div class="invalid">❌ Invalid or already used ticket.<br>(ID: ${ticketId})</div>`;
+    }
+  </script>
+</body>
+</html>
